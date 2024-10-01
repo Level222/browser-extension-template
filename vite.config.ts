@@ -28,7 +28,7 @@ export default {
     zipPack({
       outDir: 'releases',
       outFileName: `${RELEASE_NAME}-v${manifest.version}.zip`,
-      filter: (fileName) => fileName !== '.vite'
+      filter: (fileName) => fileName !== '.vite',
     }),
   ],
 } satisfies UserConfig;
