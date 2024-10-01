@@ -16,6 +16,8 @@ My browser extension template
 
 1. [Create a repository from a template](https://docs.github.com/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)
 
+     - [Creating a repository this way will add the tag "generated from" to the header](https://github.com/orgs/community/discussions/15900). If you do not want this in your new repository, download the zip and create your repository.
+
 2. Install packages
 
     ```shell
