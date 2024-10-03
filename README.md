@@ -20,6 +20,8 @@ My browser extension template
 
 2. Install packages
 
+    You can use other plugins like `vite-plugin-web-extension` or `@samrum/vite-plugin-web-extension` instead of `@crxjs/vite-plugin@beta`.
+
     ```shell
     npm i -D typescript vite @crxjs/vite-plugin@beta vite-plugin-zip-pack eslint @antfu/eslint-config husky lint-staged @types/chrome @types/node
     ```
