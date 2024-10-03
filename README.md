@@ -220,7 +220,7 @@ npm i -D postcss-html stylelint-config-html
 ### CSS Modules
 
 ```shell
-npm i -D typescript-plugin-css-modules @types/css-modules stylelint-config-css-modules
+npm i -D typescript-plugin-css-modules stylelint-config-css-modules
 ```
 
 ```diff
