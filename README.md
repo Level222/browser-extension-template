@@ -142,18 +142,9 @@ npm i -D stylelint stylelint-config-standard @stylistic/stylelint-config styleli
     },
     // ...
 +   "stylelint.validate": [
-+     "css",
-+     "less",
-+     "postcss",
-+     "scss",
-+     "html",
-+     "vue",
-+     "svelte",
-+     "astro"
++     "css"
 +   ],
 +   "css.validate": false,
-+   "less.validate": false,
-+   "scss.validate": false
   }
 ```
 
@@ -179,6 +170,16 @@ npm i -D postcss-load-config
 + export default {
 +   plugins: [],
 + };
+```
+
+```diff
+  // .vscode/settings.json
+  {
+    "stylelint.validate": [
+      // ...
++     "postcss"
+    ],
+  }
 ```
 
 [Find plugins](https://github.com/postcss/postcss#plugins)
@@ -214,6 +215,16 @@ npm i -D postcss-html stylelint-config-html
 -     "*.css": "stylelint --fix"
 +     "*.{css,html}": "stylelint --fix"
     }
+  }
+```
+
+```diff
+  // .vscode/settings.json
+  {
+    "stylelint.validate": [
+      // ...
++     "html"
+    ],
   }
 ```
 
@@ -291,6 +302,17 @@ npm i -D stylelint-config-styled-components
   }
 ```
 
+```diff
+  // .vscode/settings.json
+  {
+    "stylelint.validate": [
+      // ...
++     "javascriptreact",
++     "typescriptreact"
+    ],
+  }
+```
+
 ### Tailwind CSS
 
 ```shell
@@ -351,6 +373,17 @@ npm i -D tailwindcss stylelint-config-tailwindcss
   }
 ```
 
+```diff
+  // .vscode/settings.json
+  {
+    "stylelint.validate": [
+      // ...
++     "javascriptreact",
++     "typescriptreact"
+    ],
+  }
+```
+
 ### SCSS
 
 You can use `sass-embedded` instead of `sass`.
@@ -390,6 +423,17 @@ npm r stylelint-config-standard
   }
 ```
 
+```diff
+  // .vscode/settings.json
+  {
+    "stylelint.validate": [
+      // ...
++     "scss"
+    ],
++   "scss.validate": false
+  }
+```
+
 ### Less
 
 ```shell
@@ -424,6 +468,17 @@ npm r stylelint-config-standard
 -     "*.css": "stylelint --fix"
 +     "*.{css,less}": "stylelint --fix"
     }
+  }
+```
+
+```diff
+  // .vscode/settings.json
+  {
+    "stylelint.validate": [
+      // ...
++     "less"
+    ],
++   "less.validate": false
   }
 ```
 
@@ -555,6 +610,16 @@ You can use `@vitejs/plugin-react-swc` instead of `@vitejs/plugin-react`.
       }
     ```
 
+    ```diff
+      // .vscode/settings.json
+      {
+        "stylelint.validate": [
+          // ...
+    +     "vue"
+        ],
+      }
+    ```
+
 ### Svelte
 
 1. Install packages
@@ -651,6 +716,16 @@ You can use `@vitejs/plugin-react-swc` instead of `@vitejs/plugin-react`.
     -     "*.css": "stylelint --fix"
     +     "*.{css,svelte}": "stylelint --fix"
         }
+      }
+    ```
+
+    ```diff
+      // .vscode/settings.json
+      {
+        "stylelint.validate": [
+          // ...
+    +     "svelte"
+        ],
       }
     ```
 
