@@ -41,11 +41,58 @@ My browser extension template
 
 6. Follow the guide below if you need support for polyfill, CSS, or libraries
 
-### WebExtension API Polyfill
+### Cross Platform
 
 ```shell
 npm i webextension-polyfill
-npm i -D @types/webextension-polyfill
+npm i -D @types/webextension-polyfill cross-env
+# If you have installed @types/chrome
+npm r @types/chrome
+```
+
+```diff
+  // vite.config.js
++ import process from 'node:process';
+
++ const browser = process.env.BROWSER || 'chrome';
++
++ if (browser !== 'chrome' && browser !== 'firefox') {
++   throw new TypeError('BROWSER is not valid.');
++ }
++
++ const outDir = path.resolve(import.meta.dirname, 'dist', browser);
+
+  export default {
+    build: {
+-     outDir: path.resolve(import.meta.dirname, 'dist'),
++     outDir,
+    },
+    plugins: [
+      crx({
+        // ...
++       browser,
+      }),
+      zipPack({
+        // ...
+-       outFileName: `${RELEASE_NAME}-v${manifest.version}.zip`,
++       outFileName: `${RELEASE_NAME}-${browser}-v${manifest.version}.zip`,
++       inDir: outDir,
+      }),
+    ],
+  };
+```
+
+```diff
+  // package.json
+  {
+    "scripts": {
+      // ...
+-     "build": "npm run typecheck && vite build",
++     "build": "npm run typecheck && npm run build:chrome && npm run build:firefox",
++     "build:chrome": "cross-env BROWSER=chrome vite build",
++     "build:firefox": "cross-env BROWSER=firefox vite build",
+    },
+  }
 ```
 
 ### CSS
