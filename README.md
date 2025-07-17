@@ -2,6 +2,15 @@
 
 My browser extension template
 
+## Best practice in 2025
+
+**This template is a bit old**. There are two main alternatives.
+
+- [CRXJS](https://crxjs.dev) has released a stable version or Vite Plugin and templates are now available
+- Aaron, the author of [vite-plugin-web-extension](https://github.com/aklinker1/vite-plugin-web-extension), released a new framework [WXT](https://wxt.dev), and this framework also has templates
+
+Visit [Linter Setup Guide](https://gist.github.com/Level222/93f07a7e2d3f2f334eed4a1d93e36508) and you can configure linters with the plugin/framework.
+
 ## Features
 
 - Writing with [TypeScript](https://www.typescriptlang.org/)
@@ -625,14 +634,14 @@ You can use `@vitejs/plugin-react-swc` instead of `@vitejs/plugin-react`.
 1. Install packages
 
     ```shell
-    npm i -D @sveltejs/vite-plugin-svelte svelte-check postcss-html stylelint-config-html
+    npm i -D svelte @sveltejs/vite-plugin-svelte svelte-check postcss-html stylelint-config-html
     ```
 
 2. Configure Vite
 
     ```diff
       // vite.config.ts
-    + import { svelte } from '@tsconfig/svelte';
+    + import { svelte } from '@sveltejs/vite-plugin-svelte';
 
       export default {
         plugins: [
@@ -647,8 +656,8 @@ You can use `@vitejs/plugin-react-swc` instead of `@vitejs/plugin-react`.
     + import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
     +
     + /**
-    + * @type {import('@sveltejs/vite-plugin-svelte').SvelteConfig}
-    + */
+    +  * @type {import('@sveltejs/vite-plugin-svelte').SvelteConfig}
+    +  */
     + export default {
     +   preprocess: vitePreprocess(),
     + };
