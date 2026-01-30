@@ -2,7 +2,7 @@
 
 My browser extension template
 
-## Best practice in 2025
+## Alternatives to this template
 
 **This template is a bit old**. There are two main alternatives.
 
